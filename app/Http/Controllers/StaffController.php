@@ -61,7 +61,7 @@ class StaffController extends Controller
         //validation
         $request->validate([
             'title' => 'required',
-            'slary' => 'required',
+            'salary' => 'required',
             // 'photo' => 'required',
         ]);
 
@@ -118,7 +118,28 @@ class StaffController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        ////
+        //validation
+        $request->validate([
+            'title' => 'required',
+            'salary' => 'required',
+            // 'photo' => 'required',
+        ]);
+
+        // GET ALL DATA SUBMIT FROM <form></form>
+        $requestData = $request->all();
+
+        // FOR UPLOAD A NEW FILE WITHOUT DELETE THE OLD FILE
+        if ($request->hasFile('photo')) {
+            $path = $request->file('photo')->store('', 'public');
+            $requestData['photo'] = url(Storage::url($path));
+        }
+
+        //UPDATE A RECORD
+        $staff = Staff::findOrFail($id);
+        $staff->update($requestData);
+
+        return redirect('staff')->with('success', 'Staff updated successfully.');
     }
 
     /**
