@@ -79,13 +79,14 @@ Route::get("/gallery/cat", function () {
 });
 
 // week3
+Route::middleware(['auth', 'role:admin,teacher,student'])->group(function () {
 Route::get("/teacher", function () {
     return view("teacher");
-});
+}); }); 
 
 Route::get("/student", function () {
     return view("student");
-});
+})->middleware('auth', 'role:admin');
 
 Route::get("/theme", function () {
     return view("theme");
@@ -167,3 +168,8 @@ Route::delete("/staff/{id}", [StaffController::class, "destroy"])->name('staff.d
 
 // Route::resource('/product', ProductController::class );
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__ . '/auth.php';
