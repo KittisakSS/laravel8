@@ -1,3 +1,3 @@
 <x-bootstrap title="Book">
-index
+index2
 </x-bootstrap>
