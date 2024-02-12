@@ -1,3 +1,3 @@
 <x-bootstrap title="Book">
-index
+    fuck u yed mae
 </x-bootstrap>
