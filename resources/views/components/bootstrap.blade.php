@@ -19,7 +19,7 @@
         <div class="container">
             <a class="navbar-brand" href="#">
                 <i class="bi-bootstrap-fill" width="40" height="32"></i>
-                Bootstrap Theme
+                Books Rent
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
