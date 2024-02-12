@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\Covid19Controller;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\MyProfileController;
@@ -204,3 +205,11 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('quotation', QuotationController::class);
     Route::resource('quotation-detail', QuotationDetailController::class);
 });
+
+Route::get("/books", [BookController::class, "index"])->name('bookrent.index');
+Route::get("/books/create", [BookController::class, "create"])->name('bookrent.create');
+Route::post("/books", [BookController::class, "store"])->name('bookrent.store');
+Route::get('/books/{id}', [BookController::class, "show"])->name('bookrent.show');
+Route::get("/books/{id}/edit", [BookController::class, "edit"])->name('bookrent.edit');
+Route::patch("/books/{id}", [BookController::class, "update"])->name('bookrent.update');
+Route::delete("/books/{id}", [BookController::class, "destroy"])->name('bookrent.destroy');
