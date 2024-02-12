@@ -1,3 +1,3 @@
 <x-bootstrap title="{{ $books->title }}">
-  showkugekinosoma
+  showkugekinosomaaaaaaa
 </x-bootstrap>
