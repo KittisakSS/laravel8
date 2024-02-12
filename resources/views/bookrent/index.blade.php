@@ -1,3 +1,3 @@
 <x-bootstrap title="Book">
-    index 3
+    index pump GG
 </x-bootstrap>
