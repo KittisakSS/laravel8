@@ -15,6 +15,7 @@ use App\Http\Controllers\QuotationController;
 use App\Http\Controllers\QuotationDetailController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VehicleController;
+use App\Models\Book;
 
 /*
 |--------------------------------------------------------------------------
@@ -195,9 +196,9 @@ Route::resource('profile', ProfileController::class);
 Route::resource('user', UserController::class);
 Route::resource('vehicle', VehicleController::class);
 
-// Route::resource('customer', 'CustomerController');
-// Route::resource('quotation', 'QuotationController');
-// Route::resource('quotation-detail', 'QuotationDetailController');
+//  Route::resource('customer', 'CustomerController');
+//  Route::resource('quotation', 'QuotationController');
+//  Route::resource('quotation-detail', 'QuotationDetailController');
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('customer', CustomerController::class);
@@ -206,10 +207,12 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('quotation-detail', QuotationDetailController::class);
 });
 
-Route::get("/books", [BookController::class, "index"])->name('bookrent.index');
-Route::get("/books/create", [BookController::class, "create"])->name('bookrent.create');
-Route::post("/books", [BookController::class, "store"])->name('bookrent.store');
-Route::get('/books/{id}', [BookController::class, "show"])->name('bookrent.show');
-Route::get("/books/{id}/edit", [BookController::class, "edit"])->name('bookrent.edit');
-Route::patch("/books/{id}", [BookController::class, "update"])->name('bookrent.update');
-Route::delete("/books/{id}", [BookController::class, "destroy"])->name('bookrent.destroy');
+Route::middleware(['auth'])->group(function () {
+Route::get("/book", [BookController::class, "index"])->name('book.index');
+Route::get("/book/create", [BookController::class, "create"])->name('book.create');
+Route::post("/book", [BookController::class, "store"])->name('book.store');
+Route::get('/book/{id}', [BookController::class, "show"])->name('book.show');
+Route::get("/book/{id}/edit", [BookController::class, "edit"])->name('book.edit');
+Route::patch("/book/{id}", [BookController::class, "update"])->name('book.update');
+Route::delete("/book/{id}", [BookController::class, "destroy"])->name('book.destroy');
+});

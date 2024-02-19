@@ -3,10 +3,10 @@
     <input class="form-control" name="name" type="text" id="name" value="{{ isset($customer->name) ? $customer->name : ''}}" >
     {!! $errors->first('name', '<p class="help-block">:message</p>') !!}
 </div>
-<div class="form-group {{ $errors->has('organization_name') ? 'has-error' : ''}}">
-    <label for="organization_name" class="control-label">{{ 'Organization Name' }}</label>
-    <input class="form-control" name="organization_name" type="text" id="organization_name" value="{{ isset($customer->organization_name) ? $customer->organization_name : ''}}" >
-    {!! $errors->first('organization_name', '<p class="help-block">:message</p>') !!}
+<div class="form-group {{ $errors->has('last_name') ? 'has-error' : ''}}">
+    <label for="last_name" class="control-label">{{ 'Last Name' }}</label>
+    <input class="form-control" name="store_name" type="text" id="last_name" value="{{ isset($customer->last_name) ? $customer->last_name : ''}}" >
+    {!! $errors->first('last_name', '<p class="help-block">:message</p>') !!}
 </div>
 <div class="form-group {{ $errors->has('address') ? 'has-error' : ''}}">
     <label for="address" class="control-label">{{ 'Address' }}</label>
