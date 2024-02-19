@@ -19,7 +19,11 @@
         <div class="container">
             <a class="navbar-brand" href="#">
                 <i class="bi-bootstrap-fill" width="40" height="32"></i>
+<<<<<<< HEAD
                 Books Rent
+=======
+                SMART BAIN COMIC 
+>>>>>>> 83d2c48353fd892b7ae5035d8a2ad88b9f7853a6
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

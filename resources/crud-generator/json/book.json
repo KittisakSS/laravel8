@@ -1,0 +1,40 @@
+{
+    "fields": [
+        {
+            "name": "title",
+            "type": "string"
+        },
+        {
+            "name": "category",
+            "type": "select",
+            "options": {
+                "category": "Category",
+                "action": "Action",
+                "fantasy": "Fantasy",
+                "horror": "Horror",
+                "comedy": "Comedy"
+
+            }
+        },
+        {
+            "name": "Episode",
+            "type": "integer"
+        },  
+ 
+        {
+            "name": "content",
+            "type": "text"
+        },
+        
+        {
+            "name": "author_name",
+            "type": "text"
+        },
+        {
+            "name": "photo",
+            "type": "file"
+        }
+ 
+    ]
+ }
+ 
